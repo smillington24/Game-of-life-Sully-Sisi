@@ -82,7 +82,13 @@ void GameOfLife::print()
 
  
 void GameOfLife::update() {
-    // fill in the code
+    if (toggle) {
+        for ( char i = 0; i < HEIGHT; i++ ) {
+            for ( char j = 0; j < WIDTH; j++ ) {
+                otherWorld[i][j] = 
+                    GameOfLife::getState(world[i][j] , i , j , toggle);
+            }
+        }
 }
  
 char GameOfLife::getState( char state, char yCoord, char xCoord, bool toggle ) {
