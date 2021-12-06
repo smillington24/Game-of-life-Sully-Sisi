@@ -57,9 +57,29 @@ GameOfLife::GameOfLife( Shape sh ) :
     }
 }
  
-void GameOfLife::print() {
-    // fill in the code
+void GameOfLife::print() 
+{
+    if ( toggle ) {
+        for ( char i = 0; i < HEIGHT; i++ ) {
+            for ( char j = 0; j < WIDTH; j++ ) {
+                std::cout << world[i][j];
+            }
+            std::cout << std::endl;
+        }
+    } else {
+        for ( char i = 0; i < HEIGHT; i++ ) {
+            for ( char j = 0; j < WIDTH; j++ ) {
+                std::cout << otherWorld[i][j];
+            }
+            std::cout << std::endl;
+        }
+    }
+    for ( char i = 0; i < WIDTH; i++ ) {
+        std::cout << '=';
+    }
+    std::cout << std::endl;
 }
+
  
 void GameOfLife::update() {
     // fill in the code
