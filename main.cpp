@@ -92,7 +92,7 @@ void GameOfLife::update() {
         for ( char i = 0; i < HEIGHT; i++ ) {
             for ( char j = 0; j < WIDTH; j++ ) {
                 world[i][j] = 
-                    //fill in this line
+                   GameOfLife::getState(otherWorld[i][j] , i , j , toggle);
             }
         }
         toggle = !toggle;
