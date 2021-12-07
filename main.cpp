@@ -57,8 +57,7 @@ GameOfLife::GameOfLife( Shape sh ) :
     }
 }
  
-void GameOfLife::print() 
-{
+void GameOfLife::print() {
     if ( toggle ) {
         for ( char i = 0; i < HEIGHT; i++ ) {
             for ( char j = 0; j < WIDTH; j++ ) {
@@ -79,7 +78,6 @@ void GameOfLife::print()
     }
     std::cout << std::endl;
 }
-
  
 void GameOfLife::update() {
     if (toggle) {
@@ -89,7 +87,18 @@ void GameOfLife::update() {
                     GameOfLife::getState(world[i][j] , i , j , toggle);
             }
         }
+        toggle = !toggle;
+    } else {
+        for ( char i = 0; i < HEIGHT; i++ ) {
+            for ( char j = 0; j < WIDTH; j++ ) {
+                world[i][j] = 
+                    //fill in this line
+            }
+        }
+        toggle = !toggle;
+    }
 }
+ 
  
 char GameOfLife::getState( char state, char yCoord, char xCoord, bool toggle ) {
     char neighbors = 0;
